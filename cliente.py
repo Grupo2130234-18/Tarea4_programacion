@@ -164,3 +164,37 @@ class Cliente:
 
         finally:
             print("Proceso finalizado.\n")
+<<<<<<< HEAD:Cliente.py
+=======
+
+
+# =========================
+# PRUEBAS
+# =========================
+
+if __name__ == "__main__":
+
+    try:
+
+        # CLIENTE VÁLIDO
+        cliente1 = Cliente(
+            "Jeyson Ramos",
+            "123456789",
+            "3001234567",
+            "Bogotá"
+        )
+
+        cliente1.agregar_reserva("Reserva Sala 1")
+        cliente1.mostrar_cliente()
+
+        # CLIENTE INVÁLIDO
+        cliente2 = Cliente(
+            "Jo",
+            "12A45",
+            "123",
+            ""
+        )
+
+    except Exception as e:
+        print(f"ERROR DETECTADO: {e}")
+>>>>>>> 9a71aed8ed82e710ae300d68f588ddb8d4cf33f2:cliente.py
