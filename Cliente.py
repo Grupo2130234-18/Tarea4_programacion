@@ -1,6 +1,5 @@
 import logging
 
-
 # CONFIGURACIÓN DEL ARCHIVO LOGS
 logging.basicConfig(
     filename="logs.txt",
@@ -27,9 +26,9 @@ class Cliente:
         self.set_ciudad(ciudad)
         self.set_estado(estado)
 
-    # =========================
+  
     # GETTERS
-    # =========================
+  
 
     def get_nombre(self):
         return self._nombre
@@ -49,9 +48,9 @@ class Cliente:
     def get_reservas(self):
         return self._reservas
 
-    # =========================
+
     # SETTERS CON VALIDACIONES
-    # =========================
+   
 
     def set_nombre(self, nombre):
 
@@ -129,9 +128,8 @@ class Cliente:
             logging.error(f"Error en estado: {e}")
             raise
 
-    # =========================
+  
     # MÉTODO PARA AGREGAR RESERVAS
-    # =========================
 
     def agregar_reserva(self, reserva):
 
@@ -142,15 +140,11 @@ class Cliente:
 
             self._reservas.append(reserva)
 
-            print("Reserva agregada correctamente.")
-
         except Exception as e:
             logging.error(f"Error al agregar reserva: {e}")
             raise
 
-    # =========================
     # MÉTODO PARA MOSTRAR DATOS
-    # =========================
 
     def mostrar_cliente(self):
 
@@ -170,34 +164,3 @@ class Cliente:
 
         finally:
             print("Proceso finalizado.\n")
-
-
-# =========================
-# PRUEBAS
-# =========================
-
-if __name__ == "__main__":
-
-    try:
-
-        # CLIENTE VÁLIDO
-        cliente1 = Cliente(
-            "Jeyson Ramos",
-            "123456789",
-            "3001234567",
-            "Bogotá"
-        )
-
-        cliente1.agregar_reserva("Reserva Sala 1")
-        cliente1.mostrar_cliente()
-
-        # CLIENTE INVÁLIDO
-        cliente2 = Cliente(
-            "Jo",
-            "12A45",
-            "123",
-            ""
-        )
-
-    except Exception as e:
-        print(f"ERROR DETECTADO: {e}")
