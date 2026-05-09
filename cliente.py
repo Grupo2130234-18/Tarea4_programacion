@@ -164,8 +164,6 @@ class Cliente:
 
         finally:
             print("Proceso finalizado.\n")
-<<<<<<< HEAD:Cliente.py
-=======
 
 
 # =========================
@@ -197,4 +195,3 @@ if __name__ == "__main__":
 
     except Exception as e:
         print(f"ERROR DETECTADO: {e}")
->>>>>>> 9a71aed8ed82e710ae300d68f588ddb8d4cf33f2:cliente.py
