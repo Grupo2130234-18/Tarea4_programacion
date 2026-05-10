@@ -5,14 +5,12 @@ from reserva import Reservas
 
 print("\n========== SOFTWARE FJ ==========\n")
 
-=
 # CREACIÓN DE CLIENTES
-
 
 try:
 
     cliente1 = Cliente(
-        "Jeyson Ramos",
+        "Pepito Perez",
         "123456789",
         "3001234567",
         "Bogotá"
