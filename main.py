@@ -1,9 +1,19 @@
+# SISTEMA PRINCIPAL SOFTWARE FJ
+# Archivo encargado de ejecutar las pruebas generales
+# del sistema de gestión de clientes, servicios y reservas.
+# Aquí se validan operaciones exitosas y manejo de errores.
+
 from cliente import Cliente
 from servicios import ServicioSala, ServicioEquipo, ServicioAsesoria
 from reserva import Reservas
 
 
 print("\n========== SOFTWARE FJ ==========\n")
+
+# Se crean objetos de tipo Cliente con validaciones
+# automáticas de datos personales.
+# El bloque try/except evita que el sistema se detenga
+# si ocurre un error durante el registro.
 
 # CREACIÓN DE CLIENTES
 
@@ -28,7 +38,9 @@ try:
 except Exception as e:
     print(f"Error creando clientes: {e}")
 
-
+# Creación de diferentes servicios especializados
+# aplicando herencia y polimorfismo.
+# Cada servicio implementa su propio cálculo de costo.
 
 # CREACIÓN DE SERVICIOS
 
@@ -57,7 +69,8 @@ try:
 except Exception as e:
     print(f"Error creando servicios: {e}")
 
-
+# Se muestran los servicios registrados utilizando
+# métodos sobrescritos en cada clase derivada.
 
 # MOSTRAR SERVICIOS
 
@@ -81,7 +94,9 @@ try:
 except Exception as e:
     print(f"Error mostrando servicios: {e}")
 
-
+# Asociación entre clientes y servicios mediante
+# objetos de tipo Reserva.
+# Se valida la correcta integración de clases.
 
 # CREACIÓN DE RESERVAS
 
@@ -104,7 +119,8 @@ try:
 except Exception as e:
     print(f"Error creando reservas: {e}")
 
-
+# Confirmación de reservas verificando estados
+# y evitando duplicidad en el procesamiento.
 
 # CONFIRMAR RESERVAS
 
@@ -119,6 +135,8 @@ try:
 except Exception as e:
     print(f"Error confirmando reservas: {e}")
 
+# Cálculo total de cada reserva utilizando
+# métodos encapsulados dentro de la clase Reserva.
 
 # MOSTRAR TOTALES
 
@@ -144,14 +162,21 @@ try:
 except Exception as e:
     print(f"Error mostrando clientes: {e}")
 
+# BLOQUE DE VALIDACIÓN Y MANEJO DE EXCEPCIONES
+# En esta sección se simulan errores controlados para
+# comprobar la estabilidad y robustez del sistema.
+
 # PRUEBAS DE ERRORES
 
 print("\n===== PRUEBAS DE ERRORES =====\n")
 
 
 # CLIENTE INVÁLIDO
+# Validación de datos incorrectos en el cliente:
+# nombre corto, documento inválido y teléfono incorrecto.
 try:
 
+    
     cliente_error = Cliente(
         "Jo",
         "12A",
@@ -164,6 +189,8 @@ except Exception as e:
 
 
 # SERVICIO INVÁLIDO
+# Verificación de restricciones en duración y costos.
+# El sistema debe impedir valores negativos.
 try:
 
     servicio_error = ServicioSala(
@@ -179,6 +206,8 @@ except Exception as e:
 
 
 # RESERVA INVÁLIDA
+# Validación de tipos de datos incorrectos y
+# duración inválida en reservas.
 try:
 
     reserva_error = Reservas(
@@ -192,6 +221,8 @@ except Exception as e:
 
 
 # CONFIRMAR DOS VECES
+# Prueba de control lógico para evitar confirmar
+# una reserva previamente procesada.
 try:
 
     reserva1.confirmar_reserva()
@@ -201,3 +232,6 @@ except Exception as e:
 
 
 print("\n========== FIN DEL SISTEMA ==========\n")
+
+# Finalización del sistema y cierre de ejecución.
+# Todas las pruebas fueron procesadas correctamente.
